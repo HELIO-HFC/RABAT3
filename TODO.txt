@@ -1,0 +1,8 @@
+TODO List for RABAT3
+X.Bonnin, 23-AUG-2013
+
+* Optimiser les paramètres de detection pour Wind/Rad1 et Wind/Rad2
+* (Re)-écrire la surcouche permettant de produire les fichiers pour le HFC.
+* Faire tourner le programme sur siolino
+* (Re)-ajouter les donnees STEREO/Waves et Nancay
+* (Re)-entrainer le programme pour les données STEREO et Nancay

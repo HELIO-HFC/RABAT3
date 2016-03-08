@@ -1,0 +1,11 @@
+ RABAT3 installation guide
+ --------------------------------------
+ X.Bonnin, 17-NOV-2014
+
+To install rabat3, just copy the rabat3 main directory (it should be the current one),
+then edit the "rabat3_setup.example.csh" file in the /setup sub-directory.
+You can also copy and edit your own version of the setup file.
+
+- IDL 8.3 or higher must be installed.
+- The Solar Soft library must be installed
+    (visit http://sohowww.nascom.nasa.gov/solarsoft/).

@@ -1,0 +1,18 @@
+How to run RABAT3
+---------------------
+X.Bonnin, 07-OCT-2013
+
+ First load the environment variables required by RABAT3, 
+ from the rabat3 main directory just enter:
+	source setup/rabat3_setup.csh for csh/tcsh shell
+	source setup/rabat3_setup.sh for sh/bash shell
+
+* With IDL: 
+	- Edit and execute one of the following scripts in the lib/idl/batch sub-directory:
+		run_rabat3_wind.batch	(Wind/Waves/Rad1-Rad2 60s dataset)
+     or
+	- Execute rabat3_processing.pro in the src/ sub-directory from the IDL interpreter.
+
+
+* With Python (only for HFC outputs):
+	To be defined

@@ -1,0 +1,20 @@
+; Create a IDL runtime binary file of radex_main.pro
+; X.Bonnin, 6/03/2013
+
+sep = path_sep()
+
+radex_path = getenv('RADEX_PATH')
+if (radex_path[0] eq '') then $
+   radex_path = '/obs/helio/hfc/frc/rabat3/tools/visualization/idl/radio_explorer'
+src_path = radex_path + sep + 'src'
+lib_path = radex_path + sep + 'lib' + sep + 'idl'
+
+;Add paths to !PATH
+pathsep = PATH_SEP(/SEARCH_PATH) 
+!PATH = expand_path('+'+src_path) + pathsep + !PATH
+!PATH = expand_path('+'+lib_path+sep+'extra') + pathsep + !PATH
+
+@compile_radex.batch
+resolve_all, /CONTINUE_ON_ERROR
+filename = lib_path+sep+'bin'+sep+'radex_main.sav'
+save,filename=filename,/ROUTINES,/EMBED,/VERBOSE

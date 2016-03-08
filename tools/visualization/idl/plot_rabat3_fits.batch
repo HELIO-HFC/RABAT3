@@ -1,0 +1,12 @@
+input_dir = '/Users/xavier/LESIA/Solaire/HELIO/HFC/FEATURES/Codes/RABAT3/Products'
+output_dir = '/Users/xavier/LESIA/Solaire/HELIO/HFC/FEATURES/Codes/RABAT3/Tools/Visu/Products'
+
+files = file_search(input_dir + path_sep() + $
+					'rabat3_sta_wav_hfr_20101017.fits',$
+					count=nfiles)
+					
+for i=0,nfiles-1 do plot_rabat3_fits,files[i],index=index,$
+								     output_dir=output_dir,$
+								     max_val=50,xrange=xrange,$
+								     yrange=yrange,$
+								     /YLOG,/WRITE_PNG

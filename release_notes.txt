@@ -1,0 +1,8 @@
+RABAT3 V2.0.3 - 29/05/2013 - X.Bonnin CNRS,LESIA
+——————————————————————————
+* Add lesia directory
+* Minor changes in /src/rabat3_processing.pro 
+
+RABAT3 V2.0.4 - 17/11/2014 - X.Bonnin CNRS,LESIA
+——————————————————————————
+* Can call both methods LIG or SHT from rabat3 

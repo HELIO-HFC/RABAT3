@@ -1,0 +1,36 @@
+; Launch radio explorer software 
+; XB - 26/12/2011
+
+sep = path_sep()
+
+radex_path = getenv('RADEX_PATH')
+if (radex_path[0] eq '') then $
+   radex_path = '/obs/helio/hfc/frc/rabat3/tools/visualization/idl/radio_explorer'
+src_path = radex_path + sep + 'src'
+lib_path = radex_path + sep + 'lib' + sep + 'idl'
+data_path = radex_path + sep + 'data'
+output_dir = radex_path + sep + 'products'
+
+;Define paths
+;setenv,'WIND_WAVES_DATA_DIR='+data_path
+;setenv,'STEREOA_WAVES_DATA_DIR='+data_path
+;setenv,'STEREOB_WAVES_DATA_DIR='+data_path
+;setenv,'ULYSSES_URAP_DATA_DIR='+data_path
+;setenv,'NANCAY_NDA_DATA_DIR='+data_path
+
+;Add paths to !PATH
+pathsep = PATH_SEP(/SEARCH_PATH) 
+!PATH = expand_path('+'+src_path) + pathsep + !PATH
+!PATH = expand_path('+'+lib_path) + pathsep + !PATH
+@compile_radex.batch
+
+day = '20070101'
+;spacecraft = ['ulysses','wind','stereo_a','stereo_b']
+spacecraft = ['wind','stereo_a','stereo_b']
+frange = [20.,14000.]
+
+radex_main,day,spacecraft,/YLOG, $
+	       output_dir=output_dir, $
+	       data_dir=data_path, $
+	       min_val=0.001,max_val=20, $
+	       frange=frange; /NOLOG 

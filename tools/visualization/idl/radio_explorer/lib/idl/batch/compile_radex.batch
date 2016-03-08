@@ -1,0 +1,6 @@
+.compile radex_actions
+.compile radex_bounds
+.compile radex_display
+.compile radex_events
+.compile radex_select
+.compile radex_main
